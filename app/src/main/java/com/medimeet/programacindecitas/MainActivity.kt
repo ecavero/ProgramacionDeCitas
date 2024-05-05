@@ -36,7 +36,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
-
+@Composable
+fun ptm(){
+    
+}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
