@@ -9,18 +9,4 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.medimeet.programacindecitas.ui.theme.ProgramaciónDeCitasTheme
 
-class Login : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ProgramaciónDeCitasTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                }
-            }
-        }
-    }
-}
+
