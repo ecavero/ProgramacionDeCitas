@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
 @Composable
-fun DatosUsuarios(navController: NavHostController){
+fun DatosUsuarios(){
     Box(modifier = Modifier){
 
     }
