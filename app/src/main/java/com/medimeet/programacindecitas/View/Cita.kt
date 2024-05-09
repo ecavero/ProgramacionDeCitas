@@ -28,20 +28,18 @@ fun Cita (navController: NavController) {
             Box(
 
             ) {
-              Row(horizontalArrangement = Arrangement.SpaceBetween) {
-                  Column {
+              Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.padding(10.dp)) {
+                  Column(modifier = Modifier.padding(10.dp)) {
                       for (i: Int in 1..4) {
                          TextField(value = "", onValueChange = {} )
                       }
                   }
+                  Column (modifier = Modifier.padding(10.dp)){
+                      for (i: Int in 1..4) {
+                          TextField(value = "", onValueChange = {} )
+                      }
+                  }
               }
-                Row {
-                    Column {
-                        for (i: Int in 1..4) {
-                            TextField(value = "", onValueChange = {} )
-                        }
-                    }
-                }
             }
         }
     }
