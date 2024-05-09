@@ -10,6 +10,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.medimeet.programacindecitas.View.Cita
 import com.medimeet.programacindecitas.ui.theme.ProgramaciónDeCitasTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,30 +24,15 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.primary
                 ) {
-                    Greeting("Chau mundo")
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "citas") {
+                        composable("citas") { Cita(navController)}
+                    }
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-@Composable
-fun ptm(){
-    
-}
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProgramaciónDeCitasTheme {
-        Greeting("Android")
-    }
-}
