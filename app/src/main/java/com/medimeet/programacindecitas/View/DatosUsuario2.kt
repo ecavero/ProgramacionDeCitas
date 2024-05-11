@@ -4,11 +4,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -28,6 +26,7 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -47,23 +46,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 
 @Composable
-fun DatosUsuario(navController: NavController) {
-    var editando by remember { mutableStateOf(false) }
-    var nombreCompleto by remember { mutableStateOf("") }
-    var dni by remember { mutableStateOf("") }
-    var telefono by remember { mutableStateOf("") }
+fun DatosUsuario2(navController: NavController) {
 
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.TopCenter
     ) {
-        Column( ) {
-            Spacer(modifier = Modifier.height(30.dp))
+        Column() {
+            Spacer(modifier = Modifier.height(50.dp))
             Box(contentAlignment = Alignment.TopCenter) {
                 AsyncImage(
                     model = "https://i.blogs.es/28f6bb/tom-ford/450_1000.jpg",
@@ -76,68 +73,32 @@ fun DatosUsuario(navController: NavController) {
                 )
             }
             Spacer(modifier = Modifier.height(50.dp))
-            Text(text = "Nombres Completos : $nombreCompleto")
-            if (editando){
-                Spacer(modifier = Modifier.height(20.dp))
-                TextField(
-                    value = nombreCompleto,
-                    onValueChange = { nombreCompleto = it },
-                    label = { Text("Nuevo Nombre Completo") },
-                )
-            }
+            Text(text = "Nombres Completos :")
             Spacer(modifier = Modifier.height(20.dp))
-            Text(text = "DNI : $dni")
-            if (editando){
-                Spacer(modifier = Modifier.height(20.dp))
-                TextField(
-                    value = dni,
-                    onValueChange = { dni = it },
-                    label = { Text("Nuevo DNI") },
-                )
-            }
+            Text(text = "DNI :")
             Spacer(modifier = Modifier.height(20.dp))
-            Text(text = "Telefono : $telefono")
-            if (editando){
-                Spacer(modifier = Modifier.height(20.dp))
-                TextField(
-                    value = telefono,
-                    onValueChange = { telefono = it },
-                    label = { Text("Nuevo Telefono") },
-                )
-            }
+            Text(text = "Telefono :")
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Nro Paciente :")
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Historial Clinico :")
-            Spacer(modifier = Modifier.height(50.dp))
-            Row {
-                Button(
-                    onClick = { editando = true },
-                    modifier = Modifier
-                        .size(80.dp)
-                        .clip(RoundedCornerShape(30.dp)),
-                    colors = ButtonDefaults.buttonColors(Color.Red)
-                ) {
-                    Icon(imageVector = Icons.Default.Create, contentDescription = "Editar")
-                }
+            Spacer(modifier = Modifier.height(100.dp))
 
-                Spacer(modifier = Modifier.width(100.dp))
-
+            Row(
+                horizontalArrangement = Arrangement.Center
+            ) {
                 Button(
                     onClick = {
-                        navController.navigate("datosUsuario2")
+                        navController.navigate("disponible")
                     },
-                    modifier = Modifier
-                        .size(80.dp)
-                        .clip(RoundedCornerShape(30.dp)),
-                    colors = ButtonDefaults.buttonColors(Color.Blue)
+                    colors = ButtonDefaults.buttonColors(Color.Blue),
+                    modifier = Modifier.size(250.dp,50.dp)
                 ) {
-                    Icon(imageVector = Icons.Default.Check, contentDescription = "Confirmar")
+                    Text("Confirmar",fontSize = 20.sp)
                 }
             }
+
         }
     }
 }
-
-
 
