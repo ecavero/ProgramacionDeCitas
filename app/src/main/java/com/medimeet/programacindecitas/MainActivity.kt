@@ -15,7 +15,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.medimeet.programacindecitas.View.CitaView
 import com.medimeet.programacindecitas.View.DatosUsuario
-import com.medimeet.programacindecitas.View.DatosUsuario2
+import com.medimeet.programacindecitas.View.MedicoElegido
+import com.medimeet.programacindecitas.View.MedicosDisponibles
+import com.medimeet.programacindecitas.View.Recuperar
+import com.medimeet.programacindecitas.View.login
+
 import com.medimeet.programacindecitas.ui.theme.ProgramaciónDeCitasTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,10 +33,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.primary
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "datosUsuario") {
+                    NavHost(navController = navController, startDestination = "main") {
                         composable("citas") { CitaView(navController) }
                         composable("datosUsuario") { DatosUsuario(navController) }
-                        composable("datosUsuario2") { DatosUsuario2(navController) }
+                        composable("main"){ login(navController)}
+                        composable("recuperar"){ Recuperar(navController) }
+                        composable("disponible"){ MedicosDisponibles(navController)}
+                        composable("elegidos"){ MedicoElegido(navController)}
                     }
                 }
             }

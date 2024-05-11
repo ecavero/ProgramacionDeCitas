@@ -121,7 +121,7 @@ fun CitaView (navController: NavHostController) {
                 }
             }
             Button(
-                onClick = { /* Handle confirmation */ },
+                onClick = { navController.navigate("disponible") },
                 modifier = Modifier.align(Alignment.End)
             ) {
                 Text("Confirmar")

@@ -72,7 +72,7 @@ fun miBarraSuperior(navController: NavController) {
         ),
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = { navController.navigate("datosUsuario2")}) {
+                IconButton(onClick = { navController.navigate("citas")}) {
                     Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null )
                 }
                 Text("MEDICMEET")
