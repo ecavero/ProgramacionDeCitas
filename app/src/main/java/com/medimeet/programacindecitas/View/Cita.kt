@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Button
@@ -54,7 +56,7 @@ fun CitaView (navController: NavHostController) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 DropdownMenu(
                     modifier = Modifier.fillMaxWidth(),
-                    expanded = especialidadVisible, // Change to true to see the dropdown
+                    expanded = especialidadVisible,
                     onDismissRequest = {especialidadVisible = false},
                 ) {
                     especialidadaes.forEach { especialidad ->
@@ -82,7 +84,7 @@ fun CitaView (navController: NavHostController) {
             Row {
                 DropdownMenu(
                     modifier = Modifier.fillMaxWidth(),
-                    expanded = medicoVisible, // Change to true to see the dropdown
+                    expanded = medicoVisible,
                     onDismissRequest = {medicoVisible = false},
                 ) {
                     medicos.forEach { medico ->
@@ -120,11 +122,24 @@ fun CitaView (navController: NavHostController) {
                     )
                 }
             }
-            Button(
-                onClick = { navController.navigate("disponible") },
-                modifier = Modifier.align(Alignment.End)
-            ) {
-                Text("Confirmar")
+
+
+
+
+            Row {
+                Button(
+                    onClick = { navController.navigate("disponibles") },
+                ) {
+                    Text("Atrás")
+                }
+                Spacer(modifier = Modifier.width(200.dp))
+
+                //este es el de la vista que no existe todavía
+                Button(
+                    onClick = { navController.navigate("vista que no existe") }
+                ) {
+                    Text("Confirmar")
+                }
             }
         }
     }

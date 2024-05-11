@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.medimeet.programacindecitas.View.CitaView
 import com.medimeet.programacindecitas.View.DatosUsuario
 import com.medimeet.programacindecitas.View.DatosUsuario2
+import com.medimeet.programacindecitas.View.FiltroMedicos
 import com.medimeet.programacindecitas.View.MedicoElegido
 import com.medimeet.programacindecitas.View.MedicosDisponibles
 import com.medimeet.programacindecitas.View.Recuperar
@@ -37,8 +38,8 @@ class MainActivity : ComponentActivity() {
                         composable("datosUsuario2") { DatosUsuario2(navController) }
                         composable("main"){ login(navController)}
                         composable("recuperar"){ Recuperar(navController) }
-                        composable("disponible"){ MedicosDisponibles(navController)}
-                        composable("elegidos"){ MedicoElegido(navController)}
+                        composable("filtrosM"){ FiltroMedicos(navController) }
+                        composable("disponibles"){ MedicosDisponibles(navController)}
                     }
                 }
             }

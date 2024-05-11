@@ -89,7 +89,7 @@ fun DatosUsuario2(navController: NavController) {
             ) {
                 Button(
                     onClick = {
-                        navController.navigate("disponible")
+                        navController.navigate("filtrosM")
                     },
                     colors = ButtonDefaults.buttonColors(Color.Blue),
                     modifier = Modifier.size(250.dp,50.dp)
