@@ -132,7 +132,7 @@ fun DatosUsuario(navController: NavController) {
                         .clip(RoundedCornerShape(30.dp)),
                     colors = ButtonDefaults.buttonColors(Color.Blue)
                 ) {
-                    Icon(imageVector = Icons.Default.Check, contentDescription = "Confirmar")
+                    Icon(imageVector = Icons.Default.Check, contentDescription = "aceptar")
                 }
             }
         }
