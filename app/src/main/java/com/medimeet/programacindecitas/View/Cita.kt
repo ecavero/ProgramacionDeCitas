@@ -136,7 +136,7 @@ fun CitaView (navController: NavHostController) {
 
                 //este es el de la vista que no existe todavía
                 Button(
-                    onClick = { navController.navigate("vista que no existe") }
+                    onClick = { navController.navigate("gracias") }
                 ) {
                     Text("Confirmar")// Aquí?
                 }

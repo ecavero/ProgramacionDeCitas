@@ -20,6 +20,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -36,17 +40,18 @@ import coil.transform.CircleCropTransformation
 @Composable
 fun MedicosDisponibles(navController: NavHostController) {
         Box(modifier = Modifier.fillMaxSize()
-            .background(Color.LightGray)){
-            Column{
+            .background(Color.LightGray)) {
 
+
+            var buttonColor by remember { mutableStateOf(Color.Green) }
+
+                Column{
                 Box(modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 10.dp),
                     contentAlignment = Alignment.TopCenter){
                     Text("Medicos Disponibles", fontSize = 30.sp)}
-
                 Spacer(modifier = Modifier.height(10.dp))
-
                 Row (Modifier.padding(start = 10.dp, top = 20.dp)){
                     AsyncImage( model= ImageRequest.Builder(LocalContext.current)
                         .data("https://bit.ly/3WBIS7y")
@@ -62,8 +67,8 @@ fun MedicosDisponibles(navController: NavHostController) {
                     Column (modifier = Modifier.padding(start = 10.dp, top = 10.dp)) {
                         Text("Eduardo Gómez Sánchez", fontSize = 20.sp)
                         Text("Pacientes Atendidos: 100", fontSize = 20.sp)
-                        Button(
-                            onClick = {  },
+                        Button(onClick = {
+                                      },
                             content = {
                                 Text("Confirmar Medico", fontSize = 20.sp)
                             }
@@ -88,8 +93,8 @@ fun MedicosDisponibles(navController: NavHostController) {
                     Column (modifier = Modifier.padding(start = 10.dp, top = 10.dp)) {
                         Text("Steven Perez Salazar", fontSize = 20.sp)
                         Text("Pacientes Atendidos: 180", fontSize = 20.sp)
-                        Button(
-                            onClick = {  },
+                        Button(onClick = {
+                        },
                             content = {
                                 Text("Confirmar Medico", fontSize = 20.sp)
                             }

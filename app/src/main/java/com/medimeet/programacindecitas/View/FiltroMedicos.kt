@@ -78,8 +78,7 @@ fun  FiltroMedicos(navController: NavHostController) {
             ) {
                 TextField(
                     modifier = Modifier.fillMaxWidth()
-                        .menuAnchor()
-                        .weight(1f), //funciona carajo T_T
+                        .menuAnchor(),
                     value = if (isItemSelected) selectedText else "Especialidades",
                     onValueChange = {},
                     readOnly = true,

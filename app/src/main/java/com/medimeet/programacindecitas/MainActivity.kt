@@ -14,6 +14,7 @@ import com.medimeet.programacindecitas.View.CitaView
 import com.medimeet.programacindecitas.View.DatosUsuario
 import com.medimeet.programacindecitas.View.DatosUsuario2
 import com.medimeet.programacindecitas.View.FiltroMedicos
+import com.medimeet.programacindecitas.View.Gracias
 import com.medimeet.programacindecitas.View.MedicoElegido
 import com.medimeet.programacindecitas.View.MedicosDisponibles
 import com.medimeet.programacindecitas.View.Recuperar
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
                         composable("recuperar"){ Recuperar(navController) }
                         composable("filtrosM"){ FiltroMedicos(navController) }
                         composable("disponibles"){ MedicosDisponibles(navController)}
+                        composable("gracias"){ Gracias(navController)}
                     }
                 }
             }
