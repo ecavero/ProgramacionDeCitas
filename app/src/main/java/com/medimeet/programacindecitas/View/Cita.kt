@@ -134,11 +134,10 @@ fun CitaView (navController: NavHostController) {
                 }
                 Spacer(modifier = Modifier.width(200.dp))
 
-                //este es el de la vista que no existe todavía
                 Button(
                     onClick = { navController.navigate("gracias") }
                 ) {
-                    Text("Confirmar")// Aquí?
+                    Text("Confirmar")
                 }
             }
         }
