@@ -126,14 +126,12 @@ fun CitaView (navController: NavHostController) {
 
 
 
-            Row {
+            Row(horizontalArrangement = Arrangement.spacedBy(60.dp)) {
                 Button(
                     onClick = { navController.navigate("disponibles") },
                 ) {
                     Text("Atrás")
                 }
-                Spacer(modifier = Modifier.width(200.dp))
-
                 Button(
                     onClick = { navController.navigate("gracias") }
                 ) {
