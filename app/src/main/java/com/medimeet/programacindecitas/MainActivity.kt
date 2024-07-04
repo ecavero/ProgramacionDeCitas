@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Room
+import com.medimeet.programacindecitas.Navigation.NavigationView
+import com.medimeet.programacindecitas.Room.FiltroMedicosDatabase
 import com.medimeet.programacindecitas.View.CitaView
 import com.medimeet.programacindecitas.View.DatosUsuario
 import com.medimeet.programacindecitas.View.DatosUsuario2
@@ -27,25 +30,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ProgramaciónDeCitasTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.primary
-                ) {
-                    val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "main") {
-                        composable("citas") { CitaView(navController) }
-                        composable("datosUsuario") { DatosUsuario(navController) }
-                        composable("datosUsuario2") { DatosUsuario2(navController) }
-                        composable("main"){ login(navController)}
-                        composable("recuperar"){ Recuperar(navController) }
-                        composable("filtrosM"){ FiltroMedicos(navController) }
-                        composable("disponibles"){ MedicosDisponibles(navController)}
-                        composable("gracias"){ Gracias(navController)}
-                    }
-                }
+                val database = Room.databaseBuilder(
+                    this, FiltroMedicosDatabase::class.java, "db_filtro")
+                    .build()
+                NavigationView()
             }
         }
     }
 }
 
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.primary
+//                )
